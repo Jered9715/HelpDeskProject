@@ -1,3 +1,4 @@
+using Help_Desk_Project.DAL;
 using Help_Desk_Project.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,6 +12,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<HelpDeskContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<HelpDeskContext>();
+builder.Services.AddScoped<TicketsRepository>();
+builder.Services.AddScoped<BookmarksRepository>();
 
 
 var app = builder.Build();
