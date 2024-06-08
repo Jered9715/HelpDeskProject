@@ -19,8 +19,7 @@ namespace Help_Desk_Project.DAL
 
         public Ticket GetTicketId(int id)
         {
-            Ticket ticket = _context.Tickets.FirstOrDefault(t => t.TicketId == id);
-            return ticket;
+            return  _context.Tickets.FirstOrDefault(t => t.TicketId == id);
         }
 
         public void AddTicket(TicketCreationDto ticketdto)
@@ -38,15 +37,9 @@ namespace Help_Desk_Project.DAL
          
         }
 
-        public void UpdateTicket(TicketUpdateDto ticketdto)
+        public void UpdateTicket(Ticket ticket)
         {
-            Ticket ticket = new Ticket() 
-            {
-                Subject = ticketdto.Subject,
-                Details = ticketdto.Details,
-                Resolution = ticketdto.Resolution,
-                TicketStatus = ticketdto.TicketStatus,
-            };
+  
             _context.Tickets.Update(ticket);
             _context.SaveChanges();
         }
