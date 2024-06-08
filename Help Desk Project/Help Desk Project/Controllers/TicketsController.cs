@@ -51,7 +51,11 @@ namespace Help_Desk_Project.Controllers
             { 
                 return NotFound();
             }
-            _repo.UpdateTicket(ticketDto);
+            ticket.Subject = ticketDto.Subject;
+            ticket.Details = ticketDto.Details;
+            ticket.Resolution = ticketDto.Resolution;
+            ticket.TicketStatus = ticketDto.TicketStatus;
+            _repo.UpdateTicket(ticket);
             return NoContent();
             
         }

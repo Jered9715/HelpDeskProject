@@ -19,18 +19,24 @@ namespace Help_Desk_Project.DAL
 
         public Bookmark GetBookmarkById(int id)
         {
-            Bookmark bookmark = _context.Bookmarks.FirstOrDefault(t => t.BookmarkId == id);
-            return bookmark;
+          return _context.Bookmarks.FirstOrDefault(t => t.BookmarkId == id);
         }
 
-        public void AddBookmark(Bookmark bookmark)
+        public void AddBookmark(BookmarkCreationDto bookmarkDto)
         {
+            Bookmark bookmark = new Bookmark()
+            {
+                UserId = bookmarkDto.UserId,
+                TicketId = bookmarkDto.TicketId,
+
+            };
+            
             _context.Bookmarks.Add(bookmark);
             _context.SaveChanges();
         }
 
         public void UpdateBookmark(Bookmark bookmark)
-        {
+        {            
             _context.Bookmarks.Update(bookmark);
             _context.SaveChanges();
         }
