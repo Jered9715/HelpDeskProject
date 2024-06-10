@@ -32,16 +32,16 @@ export class TicketsService {
     return this.http.post<ticket>(this.apiUrl,ticket, httpOptions);
   }
 
-  /*
-  updateTicket(updatedTicket: ticket) : Observable<ticket>{
+  //slight change to this
+  updateTicket(updatedTicket: ticket): Observable<ticket> {
     const httpOptions = {
-      header: new HttpHeaders({
+      headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
     };
-    return this.http.put<ticket>(`${this.apiUrl}/${updatedTicket.ticketId}`)
+    return this.http.put<ticket>(`${this.apiUrl}/${updatedTicket.TicketId}`, updatedTicket, httpOptions);
   }
-*/
+
   deleteTicket(id: number): Observable<void>{
     return this.http.delete<void>(`${this.apiUrl}/${id}`)
   }
