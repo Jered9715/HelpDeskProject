@@ -14,9 +14,22 @@ builder.Services.AddDbContext<HelpDeskContext>(options => options.UseSqlServer(b
 builder.Services.AddScoped<HelpDeskContext>();
 builder.Services.AddScoped<TicketsRepository>();
 builder.Services.AddScoped<BookmarksRepository>();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+    builder =>
+    {
+        builder.AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader();
+
+    });
+
+});
 
 
 var app = builder.Build();
+app.UseCors("AllowAllOrigins");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

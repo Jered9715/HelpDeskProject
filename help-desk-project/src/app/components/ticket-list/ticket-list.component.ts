@@ -33,6 +33,7 @@ export class TicketListComponent implements OnInit {
   fetchTickets(): void {
     this.ticketService.getTickets().subscribe((data: ticket[]) => {
       this.tickets = data;
+      console.log(data);
     });
   }
 
