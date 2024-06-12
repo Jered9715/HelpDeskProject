@@ -11,8 +11,8 @@ export class BookmarkService {
 
   constructor(private http: HttpClient) { }
 
-  getBookmarks(userId: string): Observable<bookmark[]> {
-    return this.http.get<bookmark[]>(`${this.apiUrl}/${userId}`);
+  getBookmarks(): Observable<bookmark[]> {
+    return this.http.get<bookmark[]>(this.apiUrl);
   }
 
   addBookmark(bookmark: bookmark): Observable<bookmark> {

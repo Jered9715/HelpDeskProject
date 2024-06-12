@@ -1,0 +1,13 @@
+
+<div>
+  <h2>Bookmarked Tickets</h2>
+  <ul>
+    <li *ngFor="let ticket of bookmarkedTickets">
+      <h3>{{ ticket.subject }}</h3>
+      <p>{{ ticket.details }}</p>
+      <p>Status: {{ ticket.ticketStatus ? 'Closed' : 'Open' }}</p>
+      <p>Ticket ID: {{ ticket.ticketId }}</p>
+
+    </li>
+  </ul>
+</div>
