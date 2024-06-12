@@ -39,7 +39,7 @@ export class TicketsService {
         'Content-Type': 'application/json'
       })
     };
-    return this.http.put<ticket>(`${this.apiUrl}/${updatedTicket.TicketId}`, updatedTicket, httpOptions);
+    return this.http.put<ticket>(`${this.apiUrl}/${updatedTicket.ticketId}`, updatedTicket, httpOptions);
   }
 
   deleteTicket(id: number): Observable<void>{

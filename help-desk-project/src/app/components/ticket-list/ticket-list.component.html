@@ -2,12 +2,13 @@
   <h2>Open Tickets</h2>
   <ul>
     <li *ngFor="let ticket of tickets">
-      <h3>{{ ticket.Subject }}</h3>
-      <p>{{ ticket.Details }}</p>
-      <p>Status: {{ ticket.TicketStatus ? 'Closed' : 'Open' }}</p>
-      <button (click)="router.navigate(['/ticket', ticket.TicketId])">View Details</button>
-      <button (click)="bookmarkTicket(ticket)" [disabled]="ticket.Bookmarked">
-        {{ ticket.Bookmarked ? 'Bookmarked' : 'Bookmark' }}
+      <h3>{{ ticket.subject }}</h3>
+      <p>{{ ticket.details }}</p>
+      <p>Status: {{ ticket.ticketStatus ? 'Closed' : 'Open' }}</p>
+      <p>Ticket ID: {{ ticket.ticketId }}</p>
+      <button (click)="navigateToDetails(ticket)">View Details</button>
+      <button (click)="bookmarkTicket(ticket)" [disabled]="ticket.bookmarked">
+        {{ ticket.bookmarked ? 'Bookmarked' : 'Bookmark' }}
       </button>
     </li>
   </ul>
@@ -16,11 +17,11 @@
   <form (ngSubmit)="addTicket()">
     <div>
       <label for="subject">Subject:</label>
-      <input id="subject" [(ngModel)]="newTicket.Subject" name="subject" required />
+      <input id="subject" [(ngModel)]="newTicket.subject" name="subject" required />
     </div>
     <div>
       <label for="details">Details:</label>
-      <textarea id="details" [(ngModel)]="newTicket.Details" name="details" required></textarea>
+      <textarea id="details" [(ngModel)]="newTicket.details" name="details" required></textarea>
     </div>
     <button type="submit">Add Ticket</button>
   </form>
