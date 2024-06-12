@@ -2,23 +2,23 @@
     <h2>Ticket Details</h2>
     <div>
       <label for="subject">Subject:</label>
-      <input id="subject" [(ngModel)]="ticket.Subject" name="subject" />
+      <input id="subject" [(ngModel)]="ticket.subject" name="subject" />
     </div>
     <div>
       <label for="details">Details:</label>
-      <textarea id="details" [(ngModel)]="ticket.Details" name="details"></textarea>
+      <textarea id="details" [(ngModel)]="ticket.details" name="details"></textarea>
     </div>
     <div>
       <label for="resolution">Resolution:</label>
-      <textarea id="resolution" [(ngModel)]="ticket.Resolution" name="resolution"></textarea>
+      <textarea id="resolution" [(ngModel)]="ticket.resolution" name="resolution"></textarea>
     </div>
     <div>
       <label for="status">Status:</label>
-      <input id="status" type="checkbox" [(ngModel)]="ticket.TicketStatus" name="status" />
-      <label for="status">{{ ticket.TicketStatus ? 'Closed' : 'Open' }}</label>
+      <input id="status" type="checkbox" [(ngModel)]="ticket.ticketStatus" name="status" />
+      <label for="status">{{ ticket.ticketStatus ? 'Closed' : 'Open' }}</label>
     </div>
     <button (click)="updateTicket()">Update Ticket</button>
-    <button (click)="resolveTicket()" [disabled]="ticket.TicketStatus">Resolve Ticket</button>
+    <button (click)="resolveTicket()" [disabled]="ticket.ticketStatus">Resolve Ticket</button>
   </div>
   <div *ngIf="!ticket">
     <p>Loading ticket details...</p>

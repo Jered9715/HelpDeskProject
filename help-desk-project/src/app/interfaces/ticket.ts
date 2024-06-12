@@ -1,9 +1,9 @@
 export interface ticket{
-    TicketId: number;
-    Subject: string;
-    Details: string;
-    Resolution: string;
-    TicketStatus: boolean;
-    Bookmarked?: boolean;
+    ticketId: number;
+    subject: string;
+    details: string;
+    resolution: string;
+    ticketStatus: boolean;
+    bookmarked?: boolean;
 }
 

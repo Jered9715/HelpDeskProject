@@ -42,7 +42,7 @@ export class TicketDetailComponent implements OnInit {
 
   resolveTicket(): void {
     if (this.ticket) {
-      this.ticket.TicketStatus = true;
+      this.ticket.ticketStatus = true;
       this.updateTicket();
     }
   }
