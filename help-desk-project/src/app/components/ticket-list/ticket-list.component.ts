@@ -24,7 +24,7 @@ export class TicketListComponent implements OnInit {
     resolution: '',
     ticketStatus: false,
     clientId: '',
-    techId: '',
+    techId: ''
   };
 
   constructor(private ticketService: TicketsService, private bookmarkService: BookmarkService, private router: Router) { }
@@ -50,7 +50,7 @@ export class TicketListComponent implements OnInit {
           resolution: '',
           ticketStatus: false,
           clientId: '',
-          techId: '',
+          techId: ''
         };
       });
     }
