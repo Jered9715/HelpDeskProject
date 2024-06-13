@@ -22,7 +22,9 @@ export class TicketListComponent implements OnInit {
     subject: '',
     details: '',
     resolution: '',
-    ticketStatus: false
+    ticketStatus: false,
+    clientId: '',
+    techId: '',
   };
 
   constructor(private ticketService: TicketsService, private bookmarkService: BookmarkService, private router: Router) { }
@@ -46,7 +48,9 @@ export class TicketListComponent implements OnInit {
           subject: '',
           details: '',
           resolution: '',
-          ticketStatus: false
+          ticketStatus: false,
+          clientId: '',
+          techId: '',
         };
       });
     }
@@ -61,5 +65,11 @@ export class TicketListComponent implements OnInit {
 
   navigateToDetails(ticket: ticket): void {
     this.router.navigate(['/ticket', ticket.ticketId]);
+  }
+
+  deleteTicket(ticketId: number): void {
+    this.ticketService.deleteTicket(ticketId).subscribe(() => {
+      this.tickets = this.tickets.filter(ticket => ticket.ticketId !== ticketId);
+    });
   }
 }

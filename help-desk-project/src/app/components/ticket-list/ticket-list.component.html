@@ -10,6 +10,7 @@
       <button (click)="bookmarkTicket(ticket)" [disabled]="ticket.bookmarked">
         {{ ticket.bookmarked ? 'Bookmarked' : 'Bookmark' }}
       </button>
+      <button (click)="deleteTicket(ticket.ticketId)">Delete</button>
     </li>
   </ul>
 
