@@ -1,12 +1,24 @@
-<div>
-  <h2>Bookmarked Tickets</h2>
-  <ul>
-    <li *ngFor="let ticket of bookmarkedTickets">
-      <h3>{{ ticket.subject }}</h3>
-      <p>{{ ticket.details }}</p>
-      <p>Status: {{ ticket.ticketStatus ? 'Closed' : 'Open' }}</p>
-      <p>Ticket ID: {{ ticket.ticketId }}</p>
+<div class="tickets-container">
+  <div class="open-tickets">
+    <h2>Bookmarked Tickets</h2>
 
-    </li>
-  </ul>
+    <ul class="ticket-list">
+      <li *ngFor="let ticket of bookmarkedTickets" class="ticket-item">
+        <div class="ticket-header">
+        <h3>{{ ticket.subject }}</h3>
+        <p>Status: {{ ticket.ticketStatus ? 'Closed' : 'Open' }}</p>
+        </div>
+
+      
+        <p class="ticket-details">{{ ticket.details }}</p>
+        <p>Cient Name: {{ticket.clientId}}</p>
+        <p>Tech Name: {{ticket.techId}}</p>
+        
+       
+        <p>Ticket ID: {{ ticket.ticketId }}</p>
+
+      </li>
+    </ul>
+
+  </div>
 </div>

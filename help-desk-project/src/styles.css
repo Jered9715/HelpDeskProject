@@ -228,10 +228,12 @@ body {
 /* TICKET LIST**************************************************************/
 
 .tickets-container {
-  display: grid;
+  
+  display:table;
   grid-template-columns: 1fr 1fr;
   grid-gap: 40px;
   max-width: 1200px;
+  min-width: 600px;
   margin: 50px auto;
 }
 
