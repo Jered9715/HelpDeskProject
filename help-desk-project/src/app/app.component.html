@@ -1,11 +1,11 @@
 <div class="app-container">
-    <header>
-      <nav>
-        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-        <a routerLink="/bookmarks" routerLinkActive="active">Bookmarks</a>
-      </nav>
-    </header>
-    <main>
-      <router-outlet></router-outlet>
-    </main>
-  </div>
+  <header>
+    <nav class="navigation">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a routerLink="/bookmarks" routerLinkActive="active">Bookmarks</a>
+    </nav>
+  </header>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>
