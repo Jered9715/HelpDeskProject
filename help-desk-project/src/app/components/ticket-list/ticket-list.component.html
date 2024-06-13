@@ -4,6 +4,8 @@
     <li *ngFor="let ticket of tickets">
       <h3>{{ ticket.subject }}</h3>
       <p>{{ ticket.details }}</p>
+      <p>Cient Name: {{ticket.clientId}}</p>
+      <p>Tech Name: {{ticket.techId}}</p>
       <p>Status: {{ ticket.ticketStatus ? 'Closed' : 'Open' }}</p>
       <p>Ticket ID: {{ ticket.ticketId }}</p>
       <button (click)="navigateToDetails(ticket)">View Details</button>
@@ -15,6 +17,15 @@
 
   <h2>Add New Ticket</h2>
   <form (ngSubmit)="addTicket()">
+    <div>
+      <label for="clientId">Client:</label>
+      <input id="clientId" [(ngModel)]="newTicket.clientId" name="clientId" required />
+    </div>
+    <div>
+      <label for="techId">Technician:</label>
+      <input id="techId" [(ngModel)]="newTicket.techId" name="techId" required />
+    </div>
+    
     <div>
       <label for="subject">Subject:</label>
       <input id="subject" [(ngModel)]="newTicket.subject" name="subject" required />

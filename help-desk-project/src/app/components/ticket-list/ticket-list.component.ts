@@ -22,7 +22,9 @@ export class TicketListComponent implements OnInit {
     subject: '',
     details: '',
     resolution: '',
-    ticketStatus: false
+    ticketStatus: false,
+    clientId: '',
+    techId: ''
   };
 
   constructor(private ticketService: TicketsService, private bookmarkService: BookmarkService, private router: Router) { }
@@ -46,7 +48,9 @@ export class TicketListComponent implements OnInit {
           subject: '',
           details: '',
           resolution: '',
-          ticketStatus: false
+          ticketStatus: false,
+          clientId: '',
+          techId: ''
         };
       });
     }
