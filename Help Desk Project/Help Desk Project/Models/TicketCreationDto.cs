@@ -5,5 +5,9 @@
         public string? Subject { get; set; }
         public string? Details { get; set; }
 
+        public string? ClientId { get; set; }
+
+        public string? TechId { get; set; }
+
     }
 }
