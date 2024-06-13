@@ -33,7 +33,7 @@
 
         <div class="new-ticket">
             <h2>Add New Ticket</h2>
-            <form class="new-ticket-form" (ngSubmit)="addTicket()">
+            <form class="new-ticket-form" ngSubmit="addTicket()">
                 <div class="form-group">
                     <label for="subject">Subject:</label>
                     <input id="subject" ngModel="newTicket.Subject" name="subject" required />
