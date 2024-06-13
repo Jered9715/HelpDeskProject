@@ -66,4 +66,10 @@ export class TicketListComponent implements OnInit {
   navigateToDetails(ticket: ticket): void {
     this.router.navigate(['/ticket', ticket.ticketId]);
   }
+
+  deleteTicket(ticketId: number): void {
+    this.ticketService.deleteTicket(ticketId).subscribe(() => {
+      this.tickets = this.tickets.filter(ticket => ticket.ticketId !== ticketId);
+    });
+  }
 }
