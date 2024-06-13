@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/help-desk-project/src/styles.css">
+  <title>Bookmarked Tickets</title>
+</head>
+
+<body>
+
+  <div class="bookmarked-tickets">
+    <h2>Bookmarked Tickets</h2>
+
+    <form class="bookmark-form">
+      <ul>
+        <li *ngFor="let ticket of bookmarkedTickets; let i = index">
+          <label>Ticket Subject:</label>
+          <input type="text" [(ngModel)]="ticket.subject" name="subject-{{ i }}">
+
+          <label>Ticket Details:</label>
+          <textarea ngModel="ticket.details" name="details- i"></textarea>
+
+          <label>Ticket Status:</label>
+          <select ngModel="ticket.ticketStatus" name="status-i">
+            <option value="true">Closed</option>
+            <option value="false">Open</option>
+          </select>
+
+          <label>Ticket ID:</label>
+          <input type="text" ngModel="ticket.ticketId" name="id-i">
+
+          <div class="actions">
+            <button type="button" click="removeBookmark(i)">Remove</button>
+          </div>
+        </li>
+      </ul>
+    </form>
+
+    <div class="actions">
+      <button type="button" click="addBookmark()">Add Bookmark</button>
+    </div>
+  </div>
+
+</body>
+
+</html>

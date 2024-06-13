@@ -1,63 +1,355 @@
+/* Bookmark *************************************************************************************/
+
 body {
-    background-color: #8c918a;
+  background-color: #8c918a;
 }
-  
+
 .bookmark {
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    margin: 50px auto;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 50px auto;
 }
-  
-  .bookmark h3 {
-    margin-top: 0;
-    text-align: center;
-    color: #333;
-    font-size: 27px;
-  }
-  
-  .bookmark ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .bookmark li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .bookmark label {
-    width: 120px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .bookmark input[type="text"],
-  .bookmark select {
-    flex-grow: 1;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
-  
-  .bookmark input[type="checkbox"] {
-    margin-right: 5px;
-  }
-  
-  .bookmark button {
-    display: block;
-    width: 100%;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  
-  .bookmark button:hover {
-    background-color: #0056b3;
-  }
+
+.bookmark h3 {
+  margin-top: 0;
+  text-align: center;
+  color: #333;
+  font-size: 27px;
+}
+
+.bookmark ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.bookmark li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.bookmark label {
+  width: 120px;
+  font-weight: bold;
+  color: #333;
+}
+
+.bookmark input[type="text"],
+.bookmark select {
+  flex-grow: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.bookmark input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.bookmark button {
+  display: block;
+  width: 100%;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.bookmark button:hover {
+  background-color: #0056b3;
+}
+
+
+
+/* BOOKMARK LIST *************************************************************************************/
+
+body {
+  background-color: #8c918a;
+  font-family: Arial, sans-serif;
+}
+
+.bookmarked-tickets {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+.bookmarked-tickets h2 {
+  margin-top: 0;
+  text-align: center;
+  color: #333;
+  font-size: 27px;
+}
+
+.bookmark-form {
+  margin-top: 20px;
+}
+
+.bookmark-form ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.bookmark-form li {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bookmark-form label {
+  font-weight: bold;
+  color: #333;
+}
+
+.bookmark-form input[type="text"],
+.bookmark-form textarea,
+.bookmark-form select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 100%;
+}
+
+.bookmark-form textarea {
+  height: 80px;
+}
+
+.bookmark-form .actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.bookmark-form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.bookmark-form button:hover {
+  background-color: #0056b3;
+}
+
+
+/* TICKET DETAIL***************************************/
+
+.ticket-details {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+.ticket-details h2 {
+  margin-top: 0;
+  text-align: center;
+  color: #333;
+  font-size: 27px;
+}
+
+.ticket-form {
+  margin-top: 20px;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 100%;
+}
+
+.form-group textarea {
+  height: 80px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.actions button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.actions button:hover {
+  background-color: #0056b3;
+}
+
+.actions button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 50px;
+  color: #333;
+}
+
+/* TICKET LIST**************************************************************/
+
+.tickets-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
+  max-width: 1200px;
+  margin: 50px auto;
+}
+
+.open-tickets,
+.new-ticket {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.open-tickets h2,
+.new-ticket h2 {
+  margin-top: 0;
+  text-align: center;
+  color: #333;
+  font-size: 27px;
+}
+
+.ticket-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.ticket-item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ticket-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.ticket-header p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.ticket-details {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.ticket-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ticket-actions button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.ticket-actions button:hover {
+  background-color: #0056b3;
+}
+
+.ticket-actions button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.new-ticket-form {
+  margin-top: 20px;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 100%;
+}
+
+.form-group textarea {
+  height: 80px;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}

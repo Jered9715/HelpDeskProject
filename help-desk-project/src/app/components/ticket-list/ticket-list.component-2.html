@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/help-desk-project/src/styles.css">
+    <title>Ticket List</title>
+</head>
+
+<body>
+    <div class="tickets-container">
+        <div class="open-tickets">
+            <h2>Open Tickets</h2>
+            <ul class="ticket-list">
+                <li *ngFor="let ticket of tickets" class="ticket-item">
+                    <div class="ticket-header">
+                        <h3>Ticket Subject </h3>
+                        <p>Status:</p>
+                    </div>
+                    <p class="ticket-details">Ticket Details</p>
+                    <div class="ticket-actions">
+                        <button type="button" click="router.navigate('/ticket', ticket.TicketId])">
+                            View Details
+                        </button>
+                        <button type="button" click="bookmarkTicket(ticket)" disabled="ticket.Bookmarked">
+                            Ticket Bookmarked
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="new-ticket">
+            <h2>Add New Ticket</h2>
+            <form class="new-ticket-form" (ngSubmit)="addTicket()">
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input id="subject" ngModel="newTicket.Subject" name="subject" required />
+                </div>
+                <div class="form-group">
+                    <label for="details">Details:</label>
+                    <textarea id="details" ngModel="newTicket.Details" name="details" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Add Ticket</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
