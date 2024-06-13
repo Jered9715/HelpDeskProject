@@ -1,40 +1,51 @@
-<div>
-  <h2>Open Tickets</h2>
-  <ul>
-    <li *ngFor="let ticket of tickets">
-      <h3>{{ ticket.subject }}</h3>
-      <p>{{ ticket.details }}</p>
-      <p>Cient Name: {{ticket.clientId}}</p>
-      <p>Tech Name: {{ticket.techId}}</p>
-      <p>Status: {{ ticket.ticketStatus ? 'Closed' : 'Open' }}</p>
-      <p>Ticket ID: {{ ticket.ticketId }}</p>
-      <button (click)="navigateToDetails(ticket)">View Details</button>
-      <button (click)="bookmarkTicket(ticket)" [disabled]="ticket.bookmarked">
-        {{ ticket.bookmarked ? 'Bookmarked' : 'Bookmark' }}
-      </button>
-      <button (click)="deleteTicket(ticket.ticketId)">Delete</button>
-    </li>
-  </ul>
+<div class="tickets-container">
+  <div class="open-tickets">
+    <h2>Tickets</h2>
+    <ul class="ticket-list">
+      <li *ngFor="let ticket of tickets" class="ticket-item">
+        <div class="ticket-header">
+          <h3>{{ ticket.subject }}</h3>
+          <p>Status: {{ ticket.ticketStatus ? 'Closed' : 'Open' }}</p>
+        </div>
+       
+        <p>Cient Name: {{ticket.clientId}}</p>
+        <p>Tech Name: {{ticket.techId}}</p>
+        <p>Ticket Number: {{ ticket.ticketId }}</p>
+        <div class="ticket-actions">
+          <button type="button" (click)="navigateToDetails(ticket)">View Details</button>
+          <button type="button" (click)="bookmarkTicket(ticket)" [disabled]="ticket.bookmarked">
+            {{ ticket.bookmarked ? 'Bookmarked' : 'Bookmark' }}
+          </button>
+          <button type="button" (click)="deleteTicket(ticket.ticketId)">Delete</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
 
-  <h2>Add New Ticket</h2>
-  <form (ngSubmit)="addTicket()">
-    <div>
-      <label for="clientId">Client:</label>
-      <input id="clientId" [(ngModel)]="newTicket.clientId" name="clientId" required />
-    </div>
-    <div>
-      <label for="techId">Technician:</label>
-      <input id="techId" [(ngModel)]="newTicket.techId" name="techId" required />
-    </div>
-    
-    <div>
-      <label for="subject">Subject:</label>
-      <input id="subject" [(ngModel)]="newTicket.subject" name="subject" required />
-    </div>
-    <div>
-      <label for="details">Details:</label>
-      <textarea id="details" [(ngModel)]="newTicket.details" name="details" required></textarea>
-    </div>
-    <button type="submit">Add Ticket</button>
-  </form>
+<div class="tickets-container">
+  <div class="new-ticket">
+    <h2>Add New Ticket</h2>
+    <form  class="new-ticket-form" (ngSubmit)="addTicket()">
+      <div class="form-group">
+        <label for="clientId">Client:</label>
+        <input id="clientId" [(ngModel)]="newTicket.clientId" name="clientId" required />
+      </div>
+      <div class="form-group">
+        <label for="techId">Technician:</label>
+        <input id="techId" [(ngModel)]="newTicket.techId" name="techId" required />
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Subject:</label>
+        <input id="subject" [(ngModel)]="newTicket.subject" name="subject" required />
+      </div>
+      <div class="form-group">
+        <label for="details">Details:</label>
+        <textarea id="details" [(ngModel)]="newTicket.details" name="details" required></textarea>
+      </div>
+      <button type="submit">Add Ticket</button>
+    </form>
+  </div>
+
 </div>
