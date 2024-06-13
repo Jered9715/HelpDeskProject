@@ -1,5 +1,5 @@
 export interface bookmark{
-    BookmarkId?: number;
-    UserId: string;
-    TicketId: number;
+    bookmarkId?: number;
+    userId: string;
+    ticketId: number;
 }
