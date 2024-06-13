@@ -28,6 +28,8 @@ namespace Help_Desk_Project.DAL
             {
                 Subject = ticketdto.Subject,
                 Details = ticketdto.Details,
+                ClientId = ticketdto.ClientId,
+                TechId = ticketdto.TechId,
                 TicketStatus = false,
 
 
