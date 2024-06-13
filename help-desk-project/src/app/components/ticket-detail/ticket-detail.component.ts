@@ -34,9 +34,12 @@ export class TicketDetailComponent implements OnInit {
 
   updateTicket(): void {
     if (this.ticket) {
-      this.ticketService.updateTicket(this.ticket).subscribe(() => {
-        alert('Ticket updated successfully');
-      });
+      this.ticketService.updateTicket(this.ticket).subscribe(
+        () => {
+          alert('Ticket updated successfully');
+          this.router.navigate(['/tickets']);
+        }
+      );
     }
   }
 

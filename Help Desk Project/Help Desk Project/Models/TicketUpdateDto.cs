@@ -10,5 +10,9 @@
 
         public bool? TicketStatus { get; set; }
 
+        public string? ClientId { get; set; }
+
+        public string? TechId { get; set; }
+
     }
 }
