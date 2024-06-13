@@ -5,7 +5,7 @@ export interface ticket{
     resolution: string;
     ticketStatus: boolean;
     bookmarked?: boolean;
-    clientId: string;
-    techId: string;
+    clientId?: string;
+    techId?: string;
 }
 

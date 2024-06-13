@@ -55,6 +55,8 @@ namespace Help_Desk_Project.Controllers
             ticket.Details = ticketDto.Details;
             ticket.Resolution = ticketDto.Resolution;
             ticket.TicketStatus = ticketDto.TicketStatus;
+            ticket.ClientId = ticketDto.ClientId;
+            ticket.TechId = ticketDto.TechId;
             _repo.UpdateTicket(ticket);
             return NoContent();
             
