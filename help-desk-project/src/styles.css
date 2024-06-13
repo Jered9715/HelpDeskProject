@@ -1,3 +1,9 @@
+/* Navigation ************************************************************************************/
+
+.navigate-container{
+
+}
+
 /* Bookmark *************************************************************************************/
 
 body {
@@ -230,8 +236,8 @@ body {
 .tickets-container {
   
   display:table;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 40px;
+  
+
   max-width: 1200px;
   min-width: 600px;
   margin: 50px auto;
@@ -355,3 +361,5 @@ body {
 .submit-button:hover {
   background-color: #0056b3;
 }
+
+
