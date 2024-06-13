@@ -53,7 +53,7 @@ export class TicketListComponent implements OnInit {
   }
 
   bookmarkTicket(ticket: ticket): void {
-    const bookmark: bookmark = { UserId: 'staticUserId', TicketId: ticket.ticketId };
+    const bookmark: bookmark = { userId: 'staticUserId', ticketId: ticket.ticketId };
     this.bookmarkService.addBookmark(bookmark).subscribe(() => {
       ticket.bookmarked = true;
     });

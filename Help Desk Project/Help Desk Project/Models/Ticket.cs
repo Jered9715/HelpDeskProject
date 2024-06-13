@@ -15,5 +15,9 @@ public partial class Ticket
 
     public bool? TicketStatus { get; set; }
 
+    public string? ClientId { get; set; }
+
+    public string? TechId { get; set; }
+
     public virtual ICollection<Bookmark> Bookmarks { get; set; } = new List<Bookmark>();
 }

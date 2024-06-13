@@ -19,14 +19,14 @@ public partial class HelpDeskContext : DbContext
 
     public virtual DbSet<Ticket> Tickets { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { }
-
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        => optionsBuilder.UseSqlServer("Name=DefaultConnection");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Bookmark>(entity =>
         {
-            entity.HasKey(e => e.BookmarkId).HasName("PK__Bookmark__541A3B71DEB5E34E");
+            entity.HasKey(e => e.BookmarkId).HasName("PK__Bookmark__541A3B712F8CECAC");
 
             entity.Property(e => e.UserId).HasMaxLength(50);
 
@@ -37,7 +37,10 @@ public partial class HelpDeskContext : DbContext
 
         modelBuilder.Entity<Ticket>(entity =>
         {
-            entity.HasKey(e => e.TicketId).HasName("PK__Tickets__712CC6071347AD22");
+            entity.HasKey(e => e.TicketId).HasName("PK__Tickets__712CC60792E929C1");
+
+            entity.Property(e => e.ClientId).HasMaxLength(50);
+            entity.Property(e => e.TechId).HasMaxLength(50);
         });
 
         OnModelCreatingPartial(modelBuilder);
